@@ -1,0 +1,11 @@
+Quick Notes:
+
+Tech Stack:
+
+    HTML, CSS       -->     Static Content and Styling
+    Javascript      -->     Front-End Dynamic Functionality
+    React.js        -->     Front-End UI Framework
+    Tomcat          -->     Server
+    Java            -->     Back-End Logic Functionality
+    Spring          -->     Back-End Logic WebApp Framework
+    MYSQL           -->     Database
