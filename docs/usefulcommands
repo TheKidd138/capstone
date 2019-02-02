@@ -1,0 +1,33 @@
+NPM:
+    npm init -y     -->
+        Auto-builds package.json
+
+    npm install     -->
+        Will install all missing dependencies found in
+        package.json
+
+    npm install {package name} -s   -->
+        Install {package name} and save (-s) it as a
+        dependency to the package.json
+
+    npm list [-d {0-n}]     -->
+        Lists all dependencies of current project
+            -d depth flag allows to view at certain levels
+
+    npm start       -->
+        Create a "start" script in package.json, this 
+        command will run the application give the value
+        is the command that lanches the app
+    
+
+
+Bootstrap:
+
+
+
+NPM Packages:
+    lodash      -l
+    bootstrap   -l
+    nodemon     -g
+    live-server     -g
+
