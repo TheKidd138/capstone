@@ -1,4 +1,4 @@
-const boot = require('bootstrap');
+
 
 const _ = require('lodash');
 
