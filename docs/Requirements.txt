@@ -1,0 +1,23 @@
+Core Functionality:
+  - User, with admin credentials, can access the admin page
+  - User can login
+  - User can manage account information
+  - User can check part prices
+  - User can generate repair quotes
+  - User can manage the part inventory
+  - User can search if a part is in stock
+  - User can create new repairs
+  - User can manage existing repairs
+  - User can generate invoices
+  - User can view invoices
+
+Secondary Functionality:
+  - User can view various dashboards from the Home view
+    - Unpaid invoices
+    - Yearly expenses to date
+    - Yearly revenue to date
+    - Net Profit to date
+  - User can view a dynamic inventory table on the Inventory view
+  - User can view a dynamic repairs table on the Repair view when viewing current repairs
+  - User can see a quickview of the invoice from the dynamic invoice selection table on the Invoice view
+  - User can view multiple different dashboards on the Metrics view
