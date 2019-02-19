@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .formatting {
 
     font-size: 28px;
@@ -114,3 +115,121 @@ tr:nth-child(even) {
     background-color: #dddddd;
 
 }
+=======
+.formatting {
+
+    font-size: 28px;
+    font-family: monospace;
+
+}
+
+.formStyling {
+
+    text-align: center;
+    min-width: 100%;
+    min-height: 100%;
+    background-color: #ECECEC;
+    border-style: groove;
+    font-size: 28px;
+    font-family: monospace;
+
+}
+
+.header {
+
+    background-color: #36F6FC;
+    min-height: : 100px;
+    min-width: 100%;
+    border-style: groove;
+    text-align: center;
+    font-size: 40px;
+    font-family: monospace;
+    color: #5A5A5A;
+
+}
+
+.dashboards {
+
+    text-align: center;
+    min-width: 100%;
+    min-height: 100%;
+    background-color: #ECECEC;
+    border-style: groove;
+    font-size: 28px;
+    font-family: monospace;
+
+}
+
+.vert-nav {
+
+    width: 20%;
+    min-height: 100%;
+    border-style: groove;
+    background-color: #ECECEC;
+
+}
+
+.vert-nav a {
+
+    color: #5A5A5A;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 28px;
+    font-family: monospace;
+
+}
+
+.vert-nav a:hover {
+
+    background-color: #606060;
+    color: #CBCBCB;
+
+}
+
+.vert-nav a.selected {
+
+    background-color: #606060;
+    color: #CBCBCB;
+
+}
+
+#buttonFormat {
+
+    background-color: #36F6FC;
+    border-style: groove;
+    font-size: 28px;
+    font-family: monospace;
+
+}
+
+#buttonFormat:hover {
+
+    background-color: #606060;
+    color: #CBCBCB;
+
+}
+table {
+
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 75%;
+
+}
+
+td, th {
+
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    height: 30px;
+
+}
+
+tr:nth-child(even) {
+
+    background-color: #dddddd;
+
+}
+>>>>>>> origin/master
