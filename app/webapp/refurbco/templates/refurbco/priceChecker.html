@@ -1,0 +1,34 @@
+{% extends "refurbco/base.html" %}
+{% block content %}
+<div class="formStyling">
+    <p class="formatting" style="text-align:center;">Select the device and part</p>
+    <form action="#" method="get">
+        Device Type: <select name="deviceType" required>
+            <option value="">--</option>
+            <option value="iphone6">iPhone 6</option>
+            <option value="iphone6plus">iPhone 6+</option>
+            <option value="iphone7">iPhone 7</option>
+            <option value="iphone7plus">iPhone 7+</option>
+        </select> <br><br>
+        Part: <select name="partType" required>
+            <option value="">--</option>
+            <option value="screen">Screen</option>
+            <option value="battery">Battery</option>
+            <option value="chargePort">Charging Port</option>
+            <option value="screenProt">Tempered Glass Screen Protector</option>
+        </select> <br><br>
+        Color: Black<input type="radio" name="color" value="black" required>
+        White<input type="radio" name="color" value="white"> <br><br>
+        <input type="submit" value="Fetch Price" id="buttonFormat">
+    </form>
+    <p class="formatting" style="text-align:center;">Current market price of {device} {part} is: ____</p>
+    <input type="button" value="Generate Quote" id="buttonFormat">
+    <p class="formatting" style="text-align:center;">
+        Suggest quote for {device} {part} repair: <br><br>
+        Price of Part: ____ <br><br>
+        Price of Shipping: ____ <br><br>
+        Price of Labor: ____ <br><br>
+        Total Price: ____ <br><br>
+    </p>
+</div>
+{% endblock content %}
