@@ -10,7 +10,7 @@ def home(request):
 
 def inventory(request):
   context = {
-#    'parts': Part.objects.all()
+#    'Inventory': Part.objects.all()
     'title':'Inventory'
   }
   return render(request, 'refurbco/inventory.html', context)

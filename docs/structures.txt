@@ -11,7 +11,7 @@ RepairTickets:
 
 Repairs:
     ID
-    repair_ticket_ID [RepairTickets.ID]
+    repairticket_ID [RepairTickets.ID]
     repair_notes
     parts_used [Inventory.ID]
     repaired_on [current date]
@@ -26,16 +26,17 @@ Inventory:
     used [T/F]
 
 Invoices:
+    ID
     repairticket_ID
     repair_ID
     created_on [from repairticket]
     repaired_on [from repair]
     returned_on [current date]
-    expenses [from Inventory via repair.parts_used values]
     charged
     paid [T/F]
     cash/check [option]
-    Revenue
 
+Order:
+    
     
 
