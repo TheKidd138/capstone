@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Invoice
 #from .models import [class]
 
 # Create your views here.
@@ -16,7 +17,11 @@ def inventory(request):
   return render(request, 'refurbco/inventory.html', context)
 
 def invoices(request):
-  return render(request, 'refurbco/invoices.html', {'title':'Invoices'})
+  context = {
+    'title':'Invoices',
+    'invoices': Invoice.objects.all()
+  }
+  return render(request, 'refurbco/invoices.html', context)
 
 def login(request):
   return render(request, 'refurbco/login.html', {'title':'Login'})

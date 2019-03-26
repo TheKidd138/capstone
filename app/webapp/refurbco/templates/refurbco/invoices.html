@@ -12,111 +12,14 @@
             <th>Paid</th>
         </tr>
         <tr>
-            <td>Device data</td>
-            <td>Billed To data</td>
-            <td>Day/Month/Year</td>
-            <td>$$$</td>
-            <td>Y/N</td>
+            {% for invoice in invoices %}
+            <td>{{ invoice.repairticket.serial_number }}</td>
+            <td>{{ invoice.repairticket.device_owner }}</td>
+            <td>{{ invoice.returned_on }}</td>
+            <td>${{ invoice.charged }} </td>
+            <td>{{ invoice.paid }}</td>
+            {% endfor %}
         </tr>
-        <tr>
-            <td>Device data</td>
-            <td>Billed To data</td>
-            <td>Day/Month/Year</td>
-            <td>$$$</td>
-            <td>Y/N</td>
-        </tr>
-        <tr>
-            <td>Device data</td>
-            <td>Billed To data</td>
-            <td>Day/Month/Year</td>
-            <td>$$$</td>
-            <td>Y/N</td>
-        </tr>
-        <tr>
-            <td>Device data</td>
-            <td>Billed To data</td>
-            <td>Day/Month/Year</td>
-            <td>$$$</td>
-            <td>Y/N</td>
-        </tr>
-        <tr>
-            <td>Device data</td>
-            <td>Billed To data</td>
-            <td>Day/Month/Year</td>
-            <td>$$$</td>
-            <td>Y/N</td>
-        </tr>
-        <tr>
-            <td>Device data</td>
-            <td>Billed To data</td>
-            <td>Day/Month/Year</td>
-            <td>$$$</td>
-            <td>Y/N</td>
-        </tr>
-        <tr>
-            <td>Device data</td>
-            <td>Billed To data</td>
-            <td>Day/Month/Year</td>
-            <td>$$$</td>
-            <td>Y/N</td>
-        </tr>
-        <tr>
-            <td>Device data</td>
-            <td>Billed To data</td>
-            <td>Day/Month/Year</td>
-            <td>$$$</td>
-            <td>Y/N</td>
-        </tr>
-        <tr>
-            <td>Device data</td>
-            <td>Billed To data</td>
-            <td>Day/Month/Year</td>
-            <td>$$$</td>
-            <td>Y/N</td>
-        </tr>
-        <tr>
-            <td>Device data</td>
-            <td>Billed To data</td>
-            <td>Day/Month/Year</td>
-            <td>$$$</td>
-            <td>Y/N</td>
-        </tr>
-        <tr>
-            <td>Device data</td>
-            <td>Billed To data</td>
-            <td>Day/Month/Year</td>
-            <td>$$$</td>
-            <td>Y/N</td>
-        </tr>
-        <tr>
-            <td>Device data</td>
-            <td>Billed To data</td>
-            <td>Day/Month/Year</td>
-            <td>$$$</td>
-            <td>Y/N</td>
-        </tr>
-        <tr>
-            <td>Device data</td>
-            <td>Billed To data</td>
-            <td>Day/Month/Year</td>
-            <td>$$$</td>
-            <td>Y/N</td>
-        </tr>
-        <tr>
-            <td>Device data</td>
-            <td>Billed To data</td>
-            <td>Day/Month/Year</td>
-            <td>$$$</td>
-            <td>Y/N</td>
-        </tr>
-        <tr>
-            <td>Device data</td>
-            <td>Billed To data</td>
-            <td>Day/Month/Year</td>
-            <td>$$$</td>
-            <td>Y/N</td>
-        </tr>
-
     </table>
 </div>
 {% endblock content %}
