@@ -4,20 +4,21 @@ from django.db import models
 
 
 class Repair(models.Model):
+    
 
 
-class Client(models.Model):
+#class Client(models.Model):
 
 
-class Part(models.Model):
+#class Part(models.Model):
 
 
-class Invoice(models.Model):
+#class Invoice(models.Model):
 
 
-class Order(models.Model):
+#class Order(models.Model):
 
 
-class Quote(models.Model):
+#class Quote(models.Model):
 
 
