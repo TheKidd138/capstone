@@ -1,0 +1,41 @@
+RepairTickets:
+    ID
+    model_number
+    issue
+    serial_number
+    device_owner
+    bill_to
+    ticket_number
+    comments
+    created_on [current date]
+
+Repairs:
+    ID
+    repair_ticket_ID [RepairTickets.ID]
+    repair_notes
+    parts_used [Inventory.ID]
+    repaired_on [current date]
+
+Inventory:
+    ID
+    order_number
+    part_cost
+    device_type [option]
+    part [option]
+    color [not required]
+    used [T/F]
+
+Invoices:
+    repairticket_ID
+    repair_ID
+    created_on [from repairticket]
+    repaired_on [from repair]
+    returned_on [current date]
+    expenses [from Inventory via repair.parts_used values]
+    charged
+    paid [T/F]
+    cash/check [option]
+    Revenue
+
+    
+
