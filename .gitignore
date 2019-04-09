@@ -1,3 +1,4 @@
 /HTMLProto/node_modules
 /devTest/node_modules
 .DS_Store
+.vscode

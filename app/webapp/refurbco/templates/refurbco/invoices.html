@@ -1,0 +1,25 @@
+{% extends "refurbco/base.html" %}
+{% block content %}
+<div class="formatting">
+    <br>
+    <input type="button" value="Generate Invoices" id="buttonFormat"> <br> <br>
+    <table align="center">
+        <tr>
+            <th>Device</th>
+            <th>Billed To</th>
+            <th>Invoice Date</th>
+            <th>Amount Due</th>
+            <th>Paid</th>
+        </tr>
+        <tr>
+            {% for invoice in invoices %}
+            <td>{{ invoice.repairticket.serial_number }}</td>
+            <td>{{ invoice.repairticket.device_owner }}</td>
+            <td>{{ invoice.returned_on }}</td>
+            <td>${{ invoice.charged }} </td>
+            <td>{{ invoice.paid }}</td>
+            {% endfor %}
+        </tr>
+    </table>
+</div>
+{% endblock content %}

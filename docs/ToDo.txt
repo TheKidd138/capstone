@@ -1,0 +1,45 @@
+Tasks:
+
+    Create index view
+    Create pricecheck view
+    Create inventory view
+    Create repairs view
+    Create invoices view
+
+    Create navigation bar
+    Create header
+    Create footer
+
+index view Functions:
+
+    Load basic dashboards
+    outstanding invoices
+    unfinished repairs
+    
+pricecheck view Functions:
+
+    Submit fetchPrice form
+    Submit getQuote form
+
+inventory view Functions:
+
+    Load Inventory DB table
+    Submit inventorySort form
+    Edit Inventory
+
+repairs view Functions:
+
+    Load Repairs DB table
+    Submit repairSort form
+    Modify repair details
+    Create a new repair
+
+invoices view Functions:
+
+    Load Invoices DB table
+    Submit invoiceSort form
+    Update an invoice record
+    Open an invoice
+    Download an invoice
+    Submit generateInvoices form
+    
