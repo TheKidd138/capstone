@@ -19,20 +19,21 @@ class RepairTicket(models.Model):
 class Order(models.Model):
     order_number = models.TextField(max_length=20)
     order_size = models.PositiveIntegerField()
-    part_price = models.TextField(max_length=10)
-    shipping_price = models.TextField(max_length=10)
-    tax_price = models.TextField(max_length=10)
-    total_cost = models.TextField(max_length=10)
+    subtotal = models.TextField(max_length=10)
+    shipping = models.TextField(max_length=10)
+    tax = models.TextField(max_length=10)
+    total = models.TextField(max_length=10)
 
     def __str__(self):
         return self.order_number
 
 class Inventory(models.Model):
-    part_type = models.CharField(max_length=18)
-    device_type = models.CharField(max_length=12)
+    part_number = models.TextField(max_length=8)
+    part_type = models.CharField(max_length=16)
+    device_type = models.TextField(max_length=16)
+    order_number = models.ForeignKey(Order, on_delete=models.PROTECT)
     part_cost = models.TextField(max_length=10)
     color = models.CharField(max_length=12)
-    order_number = models.OneToOneField(Order, on_delete=models.PROTECT)
     used = models.BooleanField(default=False)
 
     def __str__(self):

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Invoice
+from .models import Invoice, Inventory
 #from .models import [class]
 
 # Create your views here.
@@ -11,8 +11,7 @@ def home(request):
 
 def inventory(request):
   context = {
-#    'Inventory': Part.objects.all()
-    'title':'Inventory'
+    'inventory': Inventory.objects.all()
   }
   return render(request, 'refurbco/inventory.html', context)
 

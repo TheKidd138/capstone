@@ -1,8 +1,13 @@
 {% extends "refurbco/base.html" %}
 {% block content %}
 <div class="dashboards">
-    <p class="formatting" style="text-align:center;">Build a Query!</p>
-    <form action="#" method="get">
+    <p class="formatting" style="text-align:center;">Inventory</p>
+    <form action='#' method="GET">
+        <input type='submit' value="Process an Order" id='buttonFormat'
+
+    </form>
+    <br><br>
+    <form action="#" method="GET">
         <select name="deviceType" required>
             <option value="">--</option>
             <option value="iphone6">iPhone 6</option>
@@ -30,96 +35,13 @@
             <th>Part</th>
             <th>Color</th>
         </tr>
+        {% for part in inventory %}
         <tr>
-            <td>Device data</td>
-            <td>Part Data</td>
-            <td>Color Data</td>
+            <td>{{ part.device_type }}</td>
+            <td>{{ part.part_type }}</td>
+            <td>{{ part.color }}</td>
         </tr>
-        <tr>
-            <td>Device data</td>
-            <td>Part Data</td>
-            <td>Color Data</td>
-        </tr>
-        <tr>
-            <td>Device data</td>
-            <td>Part Data</td>
-            <td>Color Data</td>
-        </tr>
-        <tr>
-            <td>Device data</td>
-            <td>Part Data</td>
-            <td>Color Data</td>
-        </tr>
-        <tr>
-            <td>Device data</td>
-            <td>Part Data</td>
-            <td>Color Data</td>
-        </tr>
-        <tr>
-            <td>Device data</td>
-            <td>Part Data</td>
-            <td>Color Data</td>
-        </tr>
-        <tr>
-            <td>Device data</td>
-            <td>Part Data</td>
-            <td>Color Data</td>
-        </tr>
-        <tr>
-            <td>Device data</td>
-            <td>Part Data</td>
-            <td>Color Data</td>
-        </tr>
-        <tr>
-            <td>Device data</td>
-            <td>Part Data</td>
-            <td>Color Data</td>
-        </tr>
-        <tr>
-            <td>Device data</td>
-            <td>Part Data</td>
-            <td>Color Data</td>
-        </tr>
-        <tr>
-            <td>Device data</td>
-            <td>Part Data</td>
-            <td>Color Data</td>
-        </tr>
-        <tr>
-            <td>Device data</td>
-            <td>Part Data</td>
-            <td>Color Data</td>
-        </tr>
-        <tr>
-            <td>Device data</td>
-            <td>Part Data</td>
-            <td>Color Data</td>
-        </tr>
-        <tr>
-            <td>Device data</td>
-            <td>Part Data</td>
-            <td>Color Data</td>
-        </tr>
-        <tr>
-            <td>Device data</td>
-            <td>Part Data</td>
-            <td>Color Data</td>
-        </tr>
-        <tr>
-            <td>Device data</td>
-            <td>Part Data</td>
-            <td>Color Data</td>
-        </tr>
-        <tr>
-            <td>Device data</td>
-            <td>Part Data</td>
-            <td>Color Data</td>
-        </tr>
-        <tr>
-            <td>Device data</td>
-            <td>Part Data</td>
-            <td>Color Data</td>
-        </tr>
+        {% endfor %}
     </table>
 </div>
 {% endblock content %}
