@@ -10,4 +10,5 @@ urlpatterns = [
     path('pricechecker/', views.priceChecker, name='refurbco-pricechecker'),
     path('repairs/', views.repairs, name='refurbco-repairs'),
     path('account/', views.account, name='refurbco-account'),
+    path('inventory/addOrder/', views.addOrder, name='refurbco-account')
 ]

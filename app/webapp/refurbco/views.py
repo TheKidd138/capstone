@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Invoice, Inventory
+from .models import Invoice, Inventory, Device
 #from .models import [class]
 
 # Create your views here.
@@ -36,3 +36,10 @@ def repairs(request):
 
 def account(request):
   return render(request, 'refurbco/account.html', {'title':'Account'})
+
+def addOrder(request):
+  context = {
+    'title':'Add Order',
+    'deviceList': Device.objcets.all()
+  }
+  return render(request, 'refurbco/addOrder.html', context)
