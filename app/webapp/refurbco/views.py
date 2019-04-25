@@ -11,7 +11,8 @@ def home(request):
 
 def inventory(request):
   context = {
-    'inventory': Inventory.objects.all()
+    'inventory': Inventory.objects.all(),
+    'deviceList': Device.objects.all()
   }
   return render(request, 'refurbco/inventory.html', context)
 
@@ -40,6 +41,6 @@ def account(request):
 def addOrder(request):
   context = {
     'title':'Add Order',
-    'deviceList': Device.objcets.all()
+    'deviceList': Device.objects.all()
   }
   return render(request, 'refurbco/addOrder.html', context)

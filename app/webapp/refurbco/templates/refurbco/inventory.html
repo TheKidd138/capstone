@@ -1,47 +1,69 @@
 {% extends "refurbco/base.html" %}
 {% block content %}
-<div class="dashboards">
-    <p class="formatting" style="text-align:center;">Inventory</p>
-    <form action='#' method="GET">
-        <input type='submit' value="Process an Order" id='buttonFormat'
-
-    </form>
+<div>
+    <br>
+    <div class='row'>
+        <h1 class='col-lg-8'>Inventory</h1>
+        <form class='col-lg-4' action="#" method="GET">
+            <input type='submit' class='btn btn-primary btn-block' value="Process an Order">
+        </form>
+    </div>
     <br><br>
-    <form action="#" method="GET">
-        <select name="deviceType" required>
-            <option value="">--</option>
-            <option value="iphone6">iPhone 6</option>
-            <option value="iphone6plus">iPhone 6+</option>
-            <option value="iphone7">iPhone 7</option>
-            <option value="iphone7plus">iPhone 7+</option>
-        </select>
-        <select name="partType" required>
-            <option value="">--</option>
-            <option value="screen">Screen</option>
-            <option value="battery">Battery</option>
-            <option value="chargePort">Charging Port</option>
-            <option value="screenProt">Tempered Glass Screen Protector</option>
-        </select>
-        <select name="color">
-            <option value="">--</option>
-            <option value="black">Black</option>
-            <option value="white">White</option>
-        </select>
-        <input type="submit" value="Execute!" id="buttonFormat">
-    </form>
-    <table align="center">
-        <tr>
-            <th>Device</th>
-            <th>Part</th>
-            <th>Color</th>
-        </tr>
+    
+        <form action="#" method="GET">
+            <div class='row'>
+                <div class='col-sm-3'>
+                    <select class=' btn btn-outline-primary btn-block' name="deviceType">
+                        {% for device in deviceList %}
+                        <option value='{{ device.device }}'>{{ device.device }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class='col-sm-3'>
+                    <select class=' btn btn-outline-primary btn-block' name="partType">
+                        <option value="">--</option>
+                        <option value="screen">Screen</option>
+                        <option value="battery">Battery</option>
+                        <option value="chargePort">Charging Port</option>
+                        <option value="screenProt">Tempered Glass Screen Protector</option>
+                    </select>
+                </div>
+                <div class='col-sm-3'>
+                    <select class=' btn btn-outline-primary btn-block' name="color">
+                        <option value="">--</option>
+                        <option value="black">Black</option>
+                        <option value="white">White</option>
+                    </select>
+                </div>
+                <div class='col-sm-3'>
+                    <input class=' btn btn-success btn-block'type="submit" value="Execute!" id="">
+                </div>
+            </div>
+        </form>
+        
+        <br>
+
+    <table class='table table-striped'>
+        <thead>
+            <tr>
+                <th scope='col'>Device Type</th>
+                <th scope='col'>Part Type</th>
+                <th scope='col'>MDAP</th>
+                <th scope='col'>Order #</th>
+                <th scope='col'>Price</th>
+            </tr>
+        </thead>
+        <tbody>
         {% for part in inventory %}
         <tr>
-            <td>{{ part.device_type }}</td>
+            <td scope='row'>{{ part.device_type }}</td>
             <td>{{ part.part_type }}</td>
+            <td>{{ part.mdap }}</td>
+            <td>{{ part.order_number }}</td>
             <td>{{ part.color }}</td>
         </tr>
         {% endfor %}
+        </tbody>
     </table>
 </div>
 {% endblock content %}
