@@ -1,4 +1,5 @@
 from django.urls import path
+from .views import InvoiceDetailView
 from . import views
 
 urlpatterns = [
@@ -10,5 +11,7 @@ urlpatterns = [
     path('pricechecker/', views.priceChecker, name='refurbco-pricechecker'),
     path('repairs/', views.repairs, name='refurbco-repairs'),
     path('account/', views.account, name='refurbco-account'),
-    path('inventory/addOrder/', views.addOrder, name='refurbco-account')
+    path('inventory/addOrder/', views.addOrder, name='refurbco-addOrder'),
+
+    path('refurbco/invoice/<int:pk>/', InvoiceDetailView.as_view(), name='invoice-detail')
 ]

@@ -46,7 +46,7 @@ class Inventory(models.Model):
     device_type = models.TextField(max_length=20) #models.ForeignKey(Device, on_delete=models.PROTECT)
     order_number = models.TextField(max_length=20) #models.ForeignKey(Order, on_delete=models.PROTECT)
     part_cost = models.TextField(max_length=10)
-    color = models.CharField(max_length=12)
+    color = models.TextField(max_length=12) #
     used = models.BooleanField(default=False)
 
     def __str__(self):
@@ -62,7 +62,8 @@ class Repair(models.Model):
         return self.repairticket
 
 class Invoice(models.Model):
-    repairticket = models.TextField(max_length=20) #models.OneToOneField(RepairTicket, on_delete=models.PROTECT)
+    invoice_id = models.AutoField(primary_key=True)
+    repairticket = models.OneToOneField(RepairTicket, on_delete=models.PROTECT)
     repair = models.TextField(max_length=20) #models.OneToOneField(Repair, on_delete=models.PROTECT)
     received_on = models.DateTimeField()
     repaired_on = models.DateTimeField()  
@@ -72,7 +73,7 @@ class Invoice(models.Model):
     payment_method = models.CharField(max_length=6)
 
     def __stf__(self):
-        return 'ID'
+        return invoice_id
 
 
 

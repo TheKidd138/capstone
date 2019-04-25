@@ -1,0 +1,36 @@
+{% extends "refurbco/base.html" %}
+{% block content %}
+<div class="">
+    <br>
+    <div class='row'>
+        <h1 class='col-lg-8'>Invoice {{ object.ID }}</h1>
+        <form class='col-lg-4' action="#" method="GET">
+            <input type='submit' class='btn btn-success btn-block' value="Edit Invoice">
+        </form>
+    </div>
+    <table class='table table-striped'>
+          <thead>
+              <tr>
+                  <th scope='col'>Invoice #</th>
+                  <th scope='col'>Ticket #</th>
+                  <th scope='col'>Owner</th>
+                  <th scope='col'>Returned On</th>
+                  <th scope='col'>Charged</th>
+                  <th scope='col'>Paid (Y/N)</th>
+              </tr>
+          </thead>
+          <tbody>
+          
+          <tr>
+              <td scope='row'>{{ object.ID }}</td>
+              <td>{{ object.repairticket }}</td>
+              <td>{{ object.repairTicket }}</td>
+              <td>{{ object.returned_on }}</td>
+              <td>{{ object.charged }}</td>
+              <td>{{ object.paid }}</td>
+          </tr>
+          
+          </tbody>
+      </table>
+</div>
+{% endblock content %}

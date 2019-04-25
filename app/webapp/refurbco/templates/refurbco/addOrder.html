@@ -2,36 +2,48 @@
 {% block content %}
 
 <br>
-    <div class='row'>
-        <h1 class='col-lg-8'>Invoices</h1>
-        <form class='col-lg-4' action="#" method="GET">
-            <input type='submit' class='btn btn-success btn-block' value="Generate Invoices">
-        </form>
-    </div>
+<div class='row'>
+    <h1 class='col-lg-8'>Invoices</h1>
+    <form class='col-lg-4' action="#" method="GET">
+        <input type='submit' class='btn btn-success btn-block' value="Process Order">
+    </form>
+</div>
+
+<br>
 
 <form action='#' method='POST'>
-    <div class='form-group'>
-        <input type='text' name='orderNumber'>
-        <input type='number' name='shipping'>
+    <div class='row'>
+        
+            <div class='col'>
+                <label for='orderInput'>Order Number</label>
+                <input type='text' class='form-control' min='0' max='1000' step='.01' id='orderInput' name='orderNumber'>
+            </div>
+            <div class='col'>
+                <label for='orderShipping'>Shipping & Handling</label>
+                <input type='number' class='form-control' id='orderShipping' name='shipping'>
+            </div>
+        
     </div>
 </form>
-
-    <div>
-        <input type='text' name='mdap' maxlength='5'>
-        <select name='deviceType'>
-            {% for device in deviceList %}
-            <option value='{{ device.device }}'>{{ device.device }}</option>
+<br>
+    <div class='form-group'>
+        <label for='mdapInput'>MDAP</label>
+        <input type='text' class='form-control' id='mdapInput' name='mdap' maxlength='8' placeholder='MDAP0000'>
+        <br>
+        <label for='deviceInput'>Part Type</label>
+        <select class='btn btn-outline-primary btn-block' id='deviceInput' name='deviceType'>
+            {% for part in parts %}
+            <option value='{{ part.part_type }}'>{{ part.part_type }}</option>
             {% endfor %}
         </select>
-        <input type='number' name='price'>
-        <select name='color'>
-            <option value='black'>Black</option>
-            <option value='white'>White</option>
-        </select>
-
+        <br>
+        <label for='priceInput'>Price</label>
+        <input type='number' class='form-control' min='0' max='1000' step='.01' id='priceInput' name='price'>
+        
     </div>
     
 
 
 
 {% endblock content %}
+

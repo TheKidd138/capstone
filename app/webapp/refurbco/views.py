@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from .models import Invoice, Inventory, Device
+from django.views.generic import DetailView
+from .models import Invoice, Inventory, Device, PartType
 #from .models import [class]
 
 # Create your views here.
@@ -41,6 +42,10 @@ def account(request):
 def addOrder(request):
   context = {
     'title':'Add Order',
-    'deviceList': Device.objects.all()
+    'parts': PartType.objects.all()
   }
   return render(request, 'refurbco/addOrder.html', context)
+
+class InvoiceDetailView(DetailView):
+  model = Invoice
+  

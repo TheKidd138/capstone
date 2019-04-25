@@ -13,7 +13,7 @@
         <form action="#" method="GET">
             <div class='row'>
                 <div class='col-sm-3'>
-                    <select class=' btn btn-outline-primary btn-block' name="deviceType">
+                    <select class='btn btn-outline-primary btn-block' name="deviceType">
                         {% for device in deviceList %}
                         <option value='{{ device.device }}'>{{ device.device }}</option>
                         {% endfor %}
@@ -58,9 +58,9 @@
         <tr>
             <td scope='row'>{{ part.device_type }}</td>
             <td>{{ part.part_type }}</td>
-            <td>{{ part.mdap }}</td>
+            <td>{{ part.color }}</td> <!---->
             <td>{{ part.order_number }}</td>
-            <td>{{ part.color }}</td>
+            <td>{{ part.part_cost}}</td>
         </tr>
         {% endfor %}
         </tbody>
