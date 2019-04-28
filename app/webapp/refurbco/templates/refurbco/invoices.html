@@ -22,10 +22,10 @@
             <tbody>
             {% for invoice in invoices %}
             <tr>
-                <td scope='row'>{{ invoice.invoice_id }}</td>
+                <td scope='row'>{{ invoice.id }}</td>
                 <td>{{ invoice.repairticket.ticket_number }}</td>
-                <td>{{ invoice.repair }}</td>
-                <td>{{ invoice.returned_on }}</td>
+                <td>{{ invoice.repairticket.device_owner }}</td>
+                <td>{{ invoice.created_on }}</td>
                 <td>{{ invoice.charged }}</td>
                 <td>{{ invoice.paid }}</td>
             </tr>
