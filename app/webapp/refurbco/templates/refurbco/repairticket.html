@@ -3,9 +3,9 @@
 <div>
     <br>
     <div class='row'>
-        <h1 class='col-lg-8'>Repair</h1>
-        <form class='col-lg-4' action="{% url 'refurbco-completeRepair' %}" method="POST"> {% csrf_token %}
-            <input type='submit' class='btn btn-primary btn-block' value="Complete a Repair">
+        <h1 class='col-lg-8'>Repair Tickets</h1>
+        <form class='col-lg-4' action="{% url 'refurbco-createRepairTicket' %}" method="POST"> {% csrf_token %}
+            <input type='submit' class='btn btn-primary btn-block' value="Create a Repair Ticket">
         </form>
     </div>
     <br><br>
@@ -39,9 +39,9 @@
         <thead>
             <tr>
                 <th scope='col'>ID</th>
-                <th scope='col'>Linked Repair Ticket</th>
-                <th scope='col'>Notes</th>
-                <th scope='col'>Part Used</th>
+                <th scope='col'>Model</th>
+                <th scope='col'>Owner</th>
+                <th scope='col'>Ticket Number</th>
                 <th scope='col'>Completed?</th>
                 <th scope='col'> </th>
             </tr>
@@ -50,12 +50,12 @@
         {% for repair in repairs %}
         <tr>
             <td scope='row'>{{ repair.id }}</td>
-            <td>{{ repair.repairticket }}</td>
-            <td>{{ repair.repair_notes }}</td>
-            <td>{{ repair.repaired_on }}</td>
-            <td>{{ repair.complete }}</td>
+            <td>{{ repair.model_number }}</td>
+            <td>{{ repair.device_owner }}</td>
+            <td>{{ repair.ticket_number }}</td>
+            <td>link pending</td>
             <td>
-                <form action="{% url 'refurbco-viewRepair' repair.id %}" method='GET'>
+                <form action="{% url 'refurbco-viewRepairTicket' repair.id %}" method='GET'>
                     <input type='submit' class='btn btn-primary' value="View">
                 </form>
             </td>

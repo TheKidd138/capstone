@@ -1,0 +1,42 @@
+{% extends "refurbco/base.html" %}
+{% block content %}
+
+<br>
+<div class='row'>
+    <h1 class='col-lg-8'>Add Part</h1>
+    
+</div>
+
+<br>
+    <form method='POST' action="{% url 'refurbco-finishOrder' %}" class='form-group'> {% csrf_token %}
+        <label for='orderNumber'>Order Number: {{ order.order_number }}</label>
+        <input type=hidden value='{{ order.order_number }}' name='orderNumber' id='orderNumber'>
+        <br>
+        <label for='mdapInput'>MDAP</label>
+        <input type='text' class='form-control' id='mdapInput' name='mdap' maxlength='8' placeholder='MDAP0000'>
+        <br>
+        <label for='deviceInput'>Device Type</label>
+        <select class='btn btn-outline-primary btn-block' id='deviceInput' name='deviceType'>
+            {% for device in deviceList %}
+                <option value='{{ device.device }}'>{{ device.device }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <label for='priceInput'>Price</label>
+        <input type='number' class='form-control' min='0' max='1000' step='.01' id='priceInput' name='price'>
+        <br>
+        <div class='row'>
+            <div class='col'>
+                <input type='submit' class='btn btn-success btn-block' value='Finish Order' name='status'>
+            </div>
+            <div class='col'>
+                <input type='submit' class='btn btn-primary btn-block' value='Add Another Part' name='status'>
+            </div>
+        </div>
+    </form>
+    
+
+
+
+{% endblock content %}
+

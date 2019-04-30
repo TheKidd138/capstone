@@ -1,0 +1,47 @@
+{% extends "refurbco/base.html" %}
+{% block content %}
+
+<br>
+<div class='row'>
+    <h1 class='col-lg-8'>Update Repair</h1>
+    
+</div>
+
+<br>
+
+<form action="{% url 'refurbco-updateRepairFinalize' %}" method='POST'> {% csrf_token %}
+        <label for='repairID'>Repair ID: {{ repair.id }}</label>
+        <input type=hidden value='{{ repair.id }}' name='repairID' id='repairID'>
+        <br>
+        <label for='repairTicket'>Repair Ticket</label>
+        <select class='btn btn-outline-primary btn-block' id='repairTicket' name='repairTicket'>
+        {% for repairTicket in repairTickets %}
+            <option value='{{ repairTicket.id }}' >{{ repairTicket.id }}</option>
+        {% endfor %}
+        </select>
+        <br>
+        <label for='notes'>Notes</label>
+        <textarea class='form-control' rows='4' id='notes' name='notes' value='{{ repair.issue }}'></textarea>
+        <br>
+        <label for='partUsed'>Part Used</label>
+        <select class='btn btn-outline-primary btn-block' id='partUsed' name='partUsed'>
+        {% for part in parts %}
+            <option value='{{ part.id }}' >{{ part.mdap }}</option>
+        {% endfor %}
+        </select>
+        <br>
+        <label for='status'>Completed</label>
+        <select class='form-control' id='status' name='status'>
+            <option value='True'>True</option>
+            <option value='False'>False</option>
+        </select>
+        <br>
+    <input type='submit' class='btn btn-success btn-block' value='Update Repair'>
+</form>
+
+    
+
+
+
+{% endblock content %}
+

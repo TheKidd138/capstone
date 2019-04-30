@@ -1,5 +1,58 @@
 {% extends "refurbco/base.html" %}
 {% block content %}
-    <p>This is where the</p>
-    <p>dashboards would be built</p>
+
+<br>
+<div class='border'>
+    <h1>Metrics</h1>
+    <div class='row'>
+        <div class='col'>
+            <h4>Repair Tickets pending</h4>
+        </div>
+        <div class='col'>
+            <h4>{{ repairTicketsPending }}</h4>
+        </div>
+        <div class='col'>
+            <form action="{% url 'refurbco-repairTickets'%}" method='GET'>
+                <input type='submit' class='btn btn-primary btn-sm' value="Jump to Repair Tickets">
+            </form>
+        </div>
+    </div>
+    <div class='row'>
+        <div class='col'>
+            <h4>Repairs In Progress</h4>
+        </div>
+        <div class='col'>
+            <h4>{{ repairsInProgress }}</h4>
+        </div>
+        <div class='col'>
+            <form action="{% url 'refurbco-repairs'%}" method='GET'>
+                <input type='submit' class='btn btn-primary btn-sm' value="Jump to Repairs">
+            </form>
+        </div>
+    </div>
+    <div class='row'>
+        <div class='col'>
+            <h4>Invoices Outstanding</h4>
+        </div>
+        <div class='col'>
+            <h4>{{ invoicesOutstanding }}</h4>
+        </div>
+        <div class='col'>
+            <form action="{% url 'refurbco-invoices'%}" method='GET'>
+                <input type='submit' class='btn btn-primary btn-sm' value="Jump to Invoices">
+            </form>
+        </div>
+    </div>
+    <div class='row'>
+        <div class='col'>
+            <h4>Last Order</h4>
+        </div>
+        <div class='col'>
+            <h4>{{ previousOrder }}</h4>
+        </div>
+        <div class='col'></div>
+    </div>
+</div>
+
+
 {% endblock content %}

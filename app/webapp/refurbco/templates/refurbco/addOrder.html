@@ -3,44 +3,39 @@
 
 <br>
 <div class='row'>
-    <h1 class='col-lg-8'>Invoices</h1>
-    <form class='col-lg-4' action="#" method="GET">
-        <input type='submit' class='btn btn-success btn-block' value="Process Order">
-    </form>
+    <h1 class='col-lg-8'>Add Order</h1>
+    
 </div>
 
 <br>
 
-<form action='#' method='POST'>
+<form action="{% url 'refurbco-addPart' %}" method='POST'> {% csrf_token %}
     <div class='row'>
         
             <div class='col'>
-                <label for='orderInput'>Order Number</label>
-                <input type='text' class='form-control' min='0' max='1000' step='.01' id='orderInput' name='orderNumber'>
+                <label for='orderNumber'>Order Number</label>
+                <input type='number' class='form-control' min='0' step='1' id='orderNumber' name='orderNumber' required>
             </div>
             <div class='col'>
-                <label for='orderShipping'>Shipping & Handling</label>
-                <input type='number' class='form-control' id='orderShipping' name='shipping'>
+                <label for='orderQuantity'>Quantity</label>
+                <input type='number' class='form-control' min='0' step='1' id='orderQuantity' name='quantity' required>
             </div>
+
         
-    </div>
+    </div><br>
+    <div class='row'>
+            <div class='col'>
+                    <label for='subtotal'>Subtotal</label>
+                    <input type='number' class='form-control' min='0' step='.01' id='subtotal' name='subtotal' required>
+                </div>
+                <div class='col'>
+                    <label for='shipping'>Shipping & Handling</label>
+                    <input type='number' class='form-control' min='0' step='1' id='shipping' name='shipping' required>
+                </div>
+    </div><br>
+    <input type='submit' class='btn btn-success btn-block' value='Add Order'>
 </form>
-<br>
-    <div class='form-group'>
-        <label for='mdapInput'>MDAP</label>
-        <input type='text' class='form-control' id='mdapInput' name='mdap' maxlength='8' placeholder='MDAP0000'>
-        <br>
-        <label for='deviceInput'>Part Type</label>
-        <select class='btn btn-outline-primary btn-block' id='deviceInput' name='deviceType'>
-            {% for part in parts %}
-            <option value='{{ part.part_type }}'>{{ part.part_type }}</option>
-            {% endfor %}
-        </select>
-        <br>
-        <label for='priceInput'>Price</label>
-        <input type='number' class='form-control' min='0' max='1000' step='.01' id='priceInput' name='price'>
-        
-    </div>
+
     
 
 

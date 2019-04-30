@@ -1,0 +1,39 @@
+{% extends "refurbco/base.html" %}
+{% block content %}
+
+<br>
+<div class='row'>
+    <h1 class='col-lg-8'>Update Part</h1>
+    
+</div>
+
+<br>
+    <form method='POST' action="{% url 'refurbco-updatePartFinalize' %}" method='POST' class='form-group'> {% csrf_token %}
+        <label for='partID'>PartID: {{ part.id }}</label>
+        <input type=hidden value='{{ part.id }}' name='partID' id='partID'>
+        <br>
+        <label for='mdap'>MDAP</label>
+        <input type='text' class='form-control' id='mdap' name='mdap' maxlength='8' value="{{ part.mdap }}">
+        <br>
+        <label for='deviceType'>Device Type</label>
+        <select class='btn btn-outline-primary btn-block' id='deviceType' name='deviceType' value="{{ part.device }}">
+            {% for device in deviceList %}
+                <option value='{{ device.device }}'>{{ device.device }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <label for='price'>Price</label>
+        <input type='number' class='form-control' min='0' max='1000' step='.01' id='price' name='price' value="{{ part.part_cost }}">
+        <br>
+        <div class='row'>
+            <div class='col'>
+                <input type='submit' class='btn btn-success btn-block' value='Done' name='status'>
+            </div>
+        </div>
+    </form>
+    
+
+
+
+{% endblock content %}
+

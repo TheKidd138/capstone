@@ -1,0 +1,73 @@
+{% extends "refurbco/base.html" %}
+{% block content %}
+
+<br>
+<div class='row'>
+    <h1 class='col-lg-8'>Part Details</h1>
+    
+</div>
+
+<br>
+
+    <div class='row'>
+        <div class='col'>
+            <h4>MDAP</h4>
+        </div>
+        <div class='col'>
+            <h4>{{ object.mdap }}</h4>
+        </div>
+    </div>
+    <div class='row'>
+        <div class='col'>
+            <h4>Part Type</h4>
+        </div>
+        <div class='col'>
+            <h4>{{ object.part }}</h4>
+        </div>
+    </div>
+    <div class='row'>
+        <div class='col'>
+            <h4>Device Type</h4>
+        </div>
+        <div class='col'>
+            <h4>{{ object.device }}</h4>
+        </div>
+    </div>
+    <div class='row'>
+        <div class='col'>
+            <h4>Order Number</h4>
+        </div>
+        <div class='col'>
+            <h4>{{ object.order }}</h4>
+        </div>
+    </div>
+    <div class='row'>
+        <div class='col'>
+            <h4>Price</h4>
+        </div>
+        <div class='col'>
+            <h4>{{ object.part_cost }}</h4>
+        </div>
+    </div>
+    <div class='row'>
+        <div class='col'>
+            <h4>Color</h4>
+        </div>
+        <div class='col'>
+            <h4>{{ object.color }}</h4>
+        </div>
+    </div><br>
+    <div class='row'>
+        <div class='col'>
+            <form action="{% url 'refurbco-updatePart' %}" method='POST'> {% csrf_token %}
+                <input type='hidden' value='{{ object.id }}' name='partID'>
+                <input type='submit' class='btn btn-primary btn-block' value='Edit'>
+            </form>
+        </div>
+    </div>
+
+
+
+
+{% endblock content %}
+

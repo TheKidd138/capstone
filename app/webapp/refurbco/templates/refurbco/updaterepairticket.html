@@ -1,0 +1,48 @@
+{% extends "refurbco/base.html" %}
+{% block content %}
+
+<br>
+<div class='row'>
+    <h1 class='col-lg-8'>Update Repair Ticket</h1>
+    
+</div>
+
+<br>
+
+<form action="{% url 'refurbco-updateRepairTicketFinalize' %}" method='POST'> {% csrf_token %}
+        <label for='repairTicketID'>Repair Ticket ID: {{ repairTicket.id }}</label>
+        <input type=hidden value='{{ repairTicket.id }}' name='repairTicketID' id='repairTicketID'>
+        <br>
+        <label for='modelNumber'>Model Number</label>
+        <input type='text' class='form-control' id='modelNumber' name='modelNumber' maxlength='5' value='{{ repairTicket.model_number }}'>
+        <br>
+        <label for='issue'>Issue/Problem</label>
+        <textarea class='form-control' rows='4' id='issue' name='issue' value='{{ repairTicket.issue }}'></textarea>
+        <br>
+        <label for='serial'>Serial Number</label>
+        <input type='text' class='form-control' id='serial' name='serial' value='{{ repairTicket.serial_number }}'>
+        <br>
+        <label for='owner'>Device Owner (Bill To)</label>
+        <input type='text' class='form-control' id='owner' name='owner' value='{{ repairTicket.device_owner }}'>
+        <br>
+        <label for='ticket'>Ticket Number</label>
+        <input type='text' class='form-control' id='ticket' name='ticket' value='{{ repairTicket.ticket_number }}'>
+        <br>
+        <label for='charged'>Charged</label>
+        <input type='number' class='form-control' min='0' step='.01' id='charged' name='charged' value='{{ repairTicket.charged }}' required>
+        <br>
+        <label for='status'>Completed</label>
+        <select class='form-control' id='status' name='status'>
+            <option value='True'>True</option>
+            <option value='False'>False</option>
+        </select>
+        <br>
+    <input type='submit' class='btn btn-success btn-block' value='Update Repair Ticket'>
+</form>
+
+    
+
+
+
+{% endblock content %}
+

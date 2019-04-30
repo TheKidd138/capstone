@@ -1,0 +1,25 @@
+{% extends "refurbco/base.html" %}
+{% block content %}
+    <form method='POST' action="{% url 'refurbco-createQuote' %}" class='form-group'> {% csrf_token %}
+        <label for='device'>Device</label>
+        <select class='btn btn-outline-primary btn-block' id='device' name='device'>
+            {% for device in deviceList %}
+                <option value='{{ device.id }}'>{{ device.device }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <label for='part'>Part</label>
+        <select class='btn btn-outline-primary btn-block' id='part' name='part'>
+            {% for part in partList %}
+                <option value='{{ part.id }}'>{{ part.part_type }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <div class='row'>
+            <div class='col'>
+                <input type='submit' class='btn btn-success btn-block' value='Create Invoice'>
+            </div>
+        </div>
+    </form>
+    
+{% endblock content %}

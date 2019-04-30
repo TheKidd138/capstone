@@ -4,7 +4,7 @@
     <br>
     <div class='row'>
         <h1 class='col-lg-8'>Inventory</h1>
-        <form class='col-lg-4' action="#" method="GET">
+        <form class='col-lg-4' action="{% url 'refurbco-addOrder' %}" method="POST"> {% csrf_token %}
             <input type='submit' class='btn btn-primary btn-block' value="Process an Order">
         </form>
     </div>
@@ -21,11 +21,7 @@
                 </div>
                 <div class='col-sm-3'>
                     <select class=' btn btn-outline-primary btn-block' name="partType">
-                        <option value="">--</option>
-                        <option value="screen">Screen</option>
-                        <option value="battery">Battery</option>
-                        <option value="chargePort">Charging Port</option>
-                        <option value="screenProt">Tempered Glass Screen Protector</option>
+                        
                     </select>
                 </div>
                 <div class='col-sm-3'>
@@ -51,19 +47,31 @@
                 <th scope='col'>MDAP</th>
                 <th scope='col'>Order #</th>
                 <th scope='col'>Price</th>
+                <th scope='col'></th>
             </tr>
         </thead>
         <tbody>
-        {% for part in inventory %}
-        <tr>
-            <td scope='row'>{{ part.device_type }}</td>
-            <td>{{ part.part_type }}</td>
-            <td>{{ part.color }}</td> <!---->
-            <td>{{ part.order_number }}</td>
-            <td>{{ part.part_cost}}</td>
-        </tr>
-        {% endfor %}
+            
+            {% for part in inventory %}
+            
+            <tr>
+                <td scope='row'>{{ part.device }}</td>
+                <td>{{ part.part }}</td>
+                <td>{{ part.mdap }}</td> <!---->
+                <td>{{ part.order }}</td>
+                <td>{{ part.part_cost}}</td>
+                <td>
+                    <form action="{% url 'refurbco-viewPart' part.id %}" method='GET'>
+                        <input type='submit' class='btn btn-primary' value="View">
+                    </form>
+                </td>
+            </tr>
+            
+            {% endfor %}
+            
         </tbody>
     </table>
+    
 </div>
+
 {% endblock content %}

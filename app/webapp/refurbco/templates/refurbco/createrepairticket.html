@@ -1,0 +1,38 @@
+{% extends "refurbco/base.html" %}
+{% block content %}
+
+<br>
+<div class='row'>
+    <h1 class='col-lg-8'>Create Repair Ticket</h1>
+    
+</div>
+
+<br>
+
+<form action="{% url 'refurbco-addRepairTicket' %}" method='POST'> {% csrf_token %}
+        <label for='modelNumber'>Model Number</label>
+        <input type='text' class='form-control' id='modelNumber' name='modelNumber' maxlength='5' placeholder='A1474'>
+        <br>
+        <label for='issue'>Issue/Problem</label>
+        <textarea class='form-control' rows='4' id='issue' name='issue'></textarea>
+        <br>
+        <label for='serial'>Serial Number</label>
+        <input type='text' class='form-control' id='serial' name='serial'>
+        <br>
+        <label for='owner'>Device Owner (Bill To)</label>
+        <input type='text' class='form-control' id='owner' name='owner'>
+        <br>
+        <label for='ticket'>Ticket Number</label>
+        <input type='text' class='form-control' id='ticket' name='ticket'>
+        <br>
+        <label for='charged'>Charged</label>
+        <input type='number' class='form-control' min='0' step='.01' id='charged' name='charged' required>
+    <input type='submit' class='btn btn-success btn-block' value='Create Repair Ticket'>
+</form>
+
+    
+
+
+
+{% endblock content %}
+

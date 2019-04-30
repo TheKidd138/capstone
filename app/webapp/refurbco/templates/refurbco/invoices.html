@@ -4,7 +4,7 @@
     <br>
     <div class='row'>
         <h1 class='col-lg-8'>Invoices</h1>
-        <form class='col-lg-4' action="#" method="GET">
+        <form class='col-lg-4' action="{% url 'refurbco-generateInvoices' %}" method="POST"> {% csrf_token %}
             <input type='submit' class='btn btn-success btn-block' value="Generate Invoices">
         </form>
     </div>
@@ -17,6 +17,7 @@
                     <th scope='col'>Returned On</th>
                     <th scope='col'>Charged</th>
                     <th scope='col'>Paid (Y/N)</th>
+                    <th scope='col'> </th>
                 </tr>
             </thead>
             <tbody>
@@ -28,6 +29,11 @@
                 <td>{{ invoice.created_on }}</td>
                 <td>{{ invoice.charged }}</td>
                 <td>{{ invoice.paid }}</td>
+                <td>
+                    <form action="{% url 'refurbco-viewInvoice' invoice.id %}" method='GET'>
+                        <input type='submit' class='btn btn-primary' value="View">
+                    </form>
+                </td>
             </tr>
             {% endfor %}
             </tbody>

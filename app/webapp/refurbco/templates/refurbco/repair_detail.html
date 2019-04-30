@@ -3,7 +3,7 @@
 
 <br>
 <div class='row'>
-    <h1 class='col-lg-8'>Invoice Details</h1>
+    <h1 class='col-lg-8'>Repair Details</h1>
     
 </div>
 
@@ -27,52 +27,42 @@
     </div>
     <div class='row'>
         <div class='col'>
-            <h4>Repair ID</h4>
+            <h4>Repair Notes</h4>
         </div>
         <div class='col'>
-            <h4>{{ object.repair }}</h4>
-        </div>
-    </div>
-    <div class='row'>
-        <div class='col'>
-            <h4>Generated On</h4>
-        </div>
-        <div class='col'>
-            <h4>{{ object.created_on }}</h4>
+            <h4>{{ object.notes }}</h4>
         </div>
     </div>
     <div class='row'>
         <div class='col'>
-            <h4>Charged</h4>
+            <h4>Part Used</h4>
         </div>
         <div class='col'>
-            <h4>{{ object.charged }}</h4>
-        </div>
-    </div>
-    <div class='row'>
-        <div class='col'>
-            <h4>Paid?</h4>
-        </div>
-        <div class='col'>
-            <h4>{{ object.paid }}</h4>
+            <h4>{{ object.part_used.part_type }}</h4>
         </div>
     </div>
     <div class='row'>
         <div class='col'>
-            <h4>Payment Method</h4>
+            <h4>Repaired On</h4>
         </div>
         <div class='col'>
-            <h4>{{ object.payment_method }}</h4>
+            <h4>{{ object.repaired_on }}</h4>
+        </div>
+    </div>
+    <div class='row'>
+        <div class='col'>
+            <h4>Complete?</h4>
+        </div>
+        <div class='col'>
+            <h4>{{ object.complete }}</h4>
         </div>
     </div><br>
     <div class='row'>
         <div class='col'>
-            <input type='submit' class='btn btn-primary btn-block' value='Edit' name='status'>
-        </div>
-    </div><br>
-    <div class='row'>
-        <div class='col'>
-            <input type='submit' class='btn btn-success btn-block' value='Export' name='status'>
+            <form action="{% url 'refurbco-updateRepair' %}" method='POST'> {% csrf_token %}
+                <input type='hidden' value='{{ object.id }}' name='repairID'>
+                <input type='submit' class='btn btn-primary btn-block' value='Edit'>
+            </form>
         </div>
     </div>
 
